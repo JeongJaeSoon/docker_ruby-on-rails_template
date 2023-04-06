@@ -1,0 +1,11 @@
+.DS_Store
+.bin
+.git
+.gitignore
+.rspec
+tmp
+log
+test
+public/packs
+public/packs-test
+.env
