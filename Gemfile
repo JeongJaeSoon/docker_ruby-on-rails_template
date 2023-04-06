@@ -62,6 +62,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Use Hotwire's livereload [https://github.com/kirillplatonov/hotwire-livereload]
+  gem "hotwire-livereload", "~> 1.2"
 end
 
 group :test do
@@ -70,5 +73,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem "hotwire-livereload", "~> 1.2", :group => :development
