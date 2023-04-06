@@ -17,7 +17,7 @@ ruby 3.2.1
 $ bundle install
 ```
 
-### Developmentd
+### Development
 
 ```bash
 $ cp .env.example .env
