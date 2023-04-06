@@ -1,24 +1,41 @@
-# README
+# Version
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby : v3.2.1
+- Ruby on Rails : v7.0.4
+- Bundler : v2.4.10
 
-Things you may want to cover:
+# Setup
 
-* Ruby version
+### Install dependencies
 
-* System dependencies
+```bash
+$ rbenv install 3.2.1
+$ rbenv global 3.2.1
+$ rbenv rehash
+$ ruby -v
+ruby 3.2.1
+$ bundle install
+```
 
-* Configuration
+### Developmentd
 
-* Database creation
+```bash
+$ cp .env.example .env
+$ bin/docker dev
+```
 
-* Database initialization
+### Docker
 
-* How to run the test suite
+```bash
+# Container build
+$ bin/docker build
 
-* Services (job queues, cache servers, search engines, etc.)
+# Container run
+$ bin/docker run
 
-* Deployment instructions
+# Container build & run
+$ bin/docker start
 
-* ...
+# Container stop
+$ bin/docker stop
+```

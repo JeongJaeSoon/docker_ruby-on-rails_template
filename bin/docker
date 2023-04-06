@@ -1,0 +1,26 @@
+#!/bin/sh
+
+option=$1
+
+if [ $option == 'build' ]
+then
+  # Command to build the container (No Rails Hotwire live reload)
+  DOCKER_BUILDKIT=1 docker build -t my-ruby .
+elif [ $option == 'run' ]
+then
+  # Command to run the built container image (Rails Hotwire live reload)
+  docker run --env-file=.env --rm --name my-ruby -p 3000:3000 -d my-ruby
+elif [ $option == 'start' ]
+then
+  DOCKER_BUILDKIT=1 docker build -t my-ruby . && docker run --env-file=.env --rm --name my-ruby -p 3000:3000 -d my-ruby
+elif [ $option == 'stop' ]
+then
+  # Command to terminate a running container
+  docker stop my-ruby
+elif [ $option == 'dev' ]
+then
+  # Commands for efficient development (Rails Hotwire live reload)
+  # If you have an existing container build, "RAILS_ENV" may not reflect properly, so create a new build each time.
+  # Loading time is required to bring up an environment convenient for development, so access localshot:3000 about 3~60 seconds after executing the command.
+  docker-compose build && docker-compose up --force-recreate -V && docker-compose rm -fsv
+fi
