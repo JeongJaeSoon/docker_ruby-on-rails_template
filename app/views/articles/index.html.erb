@@ -8,13 +8,22 @@
         and the build size is tiny.”
       </p>
     </blockquote>
-    <figcaption class="font-medium">
+    <figcaption
+      class="font-medium"
+      data-controller="articles"
+    >
       <div class="text-sky-500 dark:text-sky-400">
         Sarah Dayan
       </div>
       <div class="text-slate-700 dark:text-slate-500">
         Staff Engineer, Algolia
       </div>
+      <button
+        class="rounded-md px-8 py-2 mt-6 bg-slate-500 text-white"
+        data-action="click->articles#saveChanges"
+      >
+        Save Changes
+      </button>
     </figcaption>
   </div>
 </figure>
