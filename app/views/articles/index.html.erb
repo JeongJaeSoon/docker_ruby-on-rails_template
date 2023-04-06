@@ -1,5 +1,29 @@
-<div>
-  <h1 class="font-bold text-4xl">Articles#index</h1>
-  <p>Find me in app/views/articles/index.html.erb</p>
-  <p>Hello rails sample!!</p>
-</div>
+<figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+  <img class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src=<%= image_url('sarah-dayan.jpg') %> alt="" width="384" height="512">
+  <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+    <blockquote>
+      <p class="text-lg font-medium text-pink-600">
+        “<a class="underline decoration-sky-500">Tailwind CSS</a> is the only framework that I've seen scale
+        on large teams. It’s easy to customize, adapts to any design,
+        and the build size is tiny.”
+      </p>
+    </blockquote>
+    <figcaption
+      class="font-medium"
+      data-controller="articles"
+    >
+      <div class="text-sky-500 dark:text-sky-400">
+        Sarah Dayan
+      </div>
+      <div class="text-slate-700 dark:text-slate-500">
+        Staff Engineer, Algolia
+      </div>
+      <button
+        class="rounded-md px-8 py-2 mt-6 bg-slate-500 text-white"
+        data-action="click->articles#saveChanges"
+      >
+        Save Changes
+      </button>
+    </figcaption>
+  </div>
+</figure>

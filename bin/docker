@@ -22,5 +22,9 @@ then
   # Commands for efficient development (Rails Hotwire live reload)
   # If you have an existing container build, "RAILS_ENV" may not reflect properly, so create a new build each time.
   # Loading time is required to bring up an environment convenient for development, so access localshot:3000 about 3~60 seconds after executing the command.
-  docker-compose build && docker-compose up --force-recreate -V && docker-compose rm -fsv
+  docker-compose rm -fsv
+  docker-compose build && docker-compose up -d
+  container=$(docker container ls -f "name=${dirname}-ruby" -q)
+  docker exec -it $container rails tailwindcss:watch
+  docker-compose rm -fsv
 fi
